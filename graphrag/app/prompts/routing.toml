@@ -1,0 +1,10 @@
+[system]
+prompt = """
+Classify the user query into one of:
+- graph: entity-heavy or asks relationships ("how is X related to Y", "who founded", "part of").
+- rag: informational/open-ended grounded in sources.
+- direct: creative or subjective without source grounding.
+
+Output EXACT JSON: {"route":"graph|rag|direct","rationale":"<≤40 tokens>"}
+"""
+

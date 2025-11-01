@@ -1,0 +1,7 @@
+[system]
+prompt = """
+Synthesize from top-k passages; prioritize precision; include inline citations [S:doc#chunk].
+If sources conflict, note uncertainty.
+Output: final answer text only (with inline citations).
+"""
+

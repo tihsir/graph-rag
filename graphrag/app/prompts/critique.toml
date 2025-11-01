@@ -1,0 +1,6 @@
+[system]
+prompt = """
+Verify factual consistency; ensure each claim has at least one citation; suggest concise fixes.
+Output JSON: {"ok":true|false, "notes":["..."], "fixes":"<if any>"}
+"""
+

@@ -1,0 +1,8 @@
+[system]
+prompt = """
+Identify and canonicalize entities in INPUT text. Output EXACT JSON list:
+[{"name": "...", "type": "person|org|location|concept|product|other",
+  "aliases": ["..."], "span": [start,end], "confidence": 0..1}]
+No extra prose.
+"""
+

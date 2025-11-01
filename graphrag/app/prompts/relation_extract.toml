@@ -1,0 +1,10 @@
+[system]
+prompt = """
+Given CHUNK and detected ENTITIES, extract binary relations.
+Allowed types: works_at, founded_by, part_of, similar_to, causes, references, interacts_with.
+Output JSON list:
+[{"relation":"...", "arg1":"<entity_name_or_id>", "arg2":"<entity_name_or_id>",
+  "confidence":0..1, "rationale":"<=30 tokens"}]
+No extra prose.
+"""
+
