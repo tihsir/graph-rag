@@ -1,6 +1,6 @@
-# GraphRAG: Production-Ready Knowledge Graph Augmented Retrieval
+# GraphRAG: Knowledge Graph Augmented Retrieval
 
-A production-ready implementation of GraphRAG with promptable query flows, supporting both graph-aware and vanilla RAG retrieval modes.
+Implementation of GraphRAG with promptable query flows, supporting both graph-aware and vanilla RAG retrieval modes.
 
 ## Features
 
