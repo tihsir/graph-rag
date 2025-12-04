@@ -31,13 +31,14 @@ ENV/
 *.swp
 *.swo
 
-# Data
-data/
+# Data (only root level data directory)
+/data/
 *.db
 *.sqlite
 
 # Traces
 traces/
+/eval_results/
 
 # Environment
 .env

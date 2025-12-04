@@ -41,6 +41,7 @@ class Settings(BaseSettings):
 
     # Database
     database_url: str = "sqlite:///./data/graphrag.db"  # Default to SQLite for easy local testing
+    metadata_db_path: str = "./data/metadata.db"  # SQLite for metadata store
     redis_url: str = "redis://localhost:6379/0"
     use_cache: bool = False
 
