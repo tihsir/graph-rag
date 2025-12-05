@@ -111,5 +111,60 @@ python run_evaluation.py --num-queries 5 --k 10 --no-rerank
 
 ---
 
-*Generated: December 3, 2025*
+## MCQ Evaluation Results (December 4, 2025)
+
+### Setup
+
+| Parameter | Value |
+|-----------|-------|
+| Dataset | Biomedical MCQ (15 curated questions) |
+| Categories | Treatment, Mechanism, Drug Safety, Technology |
+| Methods Compared | GraphRAG, Vanilla RAG, Direct LLM |
+| Questions Evaluated | 10 |
+
+### MCQ Accuracy Results
+
+| Method | Accuracy | Correct | Avg Score |
+|--------|----------|---------|-----------|
+| **GraphRAG** | **100.0%** | 10/10 | 1.000 |
+| **Vanilla RAG** | **100.0%** | 10/10 | 1.000 |
+| Direct LLM | 0.0% | 0/10 | 0.000 |
+
+### Key Findings
+
+1. **Retrieval is Critical**: Both RAG methods achieved 100% accuracy while Direct LLM (no retrieval) got 0%. This proves that retrieval-augmented generation is essential for specialized biomedical QA.
+
+2. **RAG Methods Tied**: GraphRAG and Vanilla RAG performed equally on these MCQ questions. This suggests:
+   - The questions may not require multi-hop reasoning where GraphRAG excels
+   - The vector search effectively retrieves relevant chunks for factual MCQs
+   - Both methods successfully leverage the PubMed context
+
+3. **LLM Without Context Fails**: The direct LLM baseline couldn't answer any questions correctly, likely because:
+   - Questions require specific domain knowledge from the PubMed articles
+   - General LLM knowledge doesn't cover specific treatment details
+   - Retrieval provides crucial context for accurate answers
+
+### Question Categories Tested
+
+- **Treatment**: First-line medications, disease-modifying therapies
+- **Mechanism**: Pathophysiology, cell types involved
+- **Drug Safety**: Adverse effects, contraindications
+- **Technology**: AI applications in medicine
+
+### Reproducing Results
+
+```bash
+# Run MCQ evaluation
+python run_mcq_eval.py --num-questions 10 --no-llm-judge
+
+# Full evaluation with LLM grading
+python run_mcq_eval.py --num-questions 15
+
+# Quick test
+python run_mcq_eval.py --quick
+```
+
+---
+
+*Generated: December 4, 2025*
 

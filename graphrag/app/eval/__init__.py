@@ -9,6 +9,29 @@ from .datasets import (
     get_chunk_texts_from_store,
 )
 
+from .mcq_dataset import (
+    MCQQuestion,
+    MCQDataset,
+    create_biomedical_mcq_dataset,
+    create_quick_mcq_dataset,
+)
+
+from .mcq_judge import (
+    MCQGrade,
+    MCQEvalSummary,
+    GradeLevel,
+    grade_mcq_response,
+    summarize_grades,
+)
+
+from .mcq_eval_runner import (
+    MCQMethodResult,
+    MCQComparisonResult,
+    MCQEvalReport,
+    run_mcq_evaluation,
+    run_quick_mcq_eval,
+)
+
 from .metrics import (
     # IR Metrics
     recall_at_k,
@@ -63,6 +86,11 @@ __all__ = [
     "create_pubmed_evaluation_dataset",
     "update_gold_passages_from_chunks",
     "get_chunk_texts_from_store",
+    # MCQ Datasets
+    "MCQQuestion",
+    "MCQDataset",
+    "create_biomedical_mcq_dataset",
+    "create_quick_mcq_dataset",
     # IR Metrics
     "recall_at_k",
     "precision_at_k",
@@ -90,6 +118,12 @@ __all__ = [
     "aggregate_metrics",
     # LLM Judge
     "llm_judge",
+    # MCQ Judge
+    "MCQGrade",
+    "MCQEvalSummary",
+    "GradeLevel",
+    "grade_mcq_response",
+    "summarize_grades",
     # Vanilla RAG
     "VanillaRAG",
     "VanillaRAGResult",
@@ -102,4 +136,10 @@ __all__ = [
     "run_single_query_eval",
     "run_evaluation",
     "run_quick_eval",
+    # MCQ Evaluation
+    "MCQMethodResult",
+    "MCQComparisonResult",
+    "MCQEvalReport",
+    "run_mcq_evaluation",
+    "run_quick_mcq_eval",
 ]
