@@ -573,6 +573,7 @@ Output as JSON:
 # ============== QUESTIONS ==============
 
 QUESTIONS = [
+    # Original 3 questions
     LongFormQuestion(
         id="q1_hla_psoriasis",
         question="Explain the relationship between HLA-B gene variants and autoimmune diseases like psoriasis. What mechanisms link genetic variation to disease manifestation?",
@@ -599,6 +600,161 @@ QUESTIONS = [
         reference_answer="HLA-B is central hub for all conditions. Shared pathways include MHC antigen presentation, T cell dysregulation, inflammatory cascades. Genetic pleiotropy explains co-associations.",
         key_points=["HLA-B multiple conditions", "MHC antigen presentation", "T cell dysregulation", "Shared inflammation", "Genetic pleiotropy"],
         required_entities=["psoriasis", "HLA-B", "Takayasu's arteritis", "autoimmune"]
+    ),
+    
+    # NEW QUESTIONS (4-20)
+    LongFormQuestion(
+        id="q4_brca_cancer",
+        question="Explain how BRCA1 and BRCA2 gene mutations increase cancer risk. What are the molecular mechanisms and which cancers are most affected?",
+        question_type="explanation",
+        difficulty="medium",
+        reference_answer="BRCA1/2 are tumor suppressors involved in DNA double-strand break repair via homologous recombination. Mutations impair DNA repair, leading to genomic instability. Primarily increases breast and ovarian cancer risk, also pancreatic and prostate.",
+        key_points=["Tumor suppressor genes", "DNA repair mechanisms", "Homologous recombination", "Breast cancer risk", "Ovarian cancer", "Genomic instability"],
+        required_entities=["BRCA1", "BRCA2", "breast cancer", "DNA repair"]
+    ),
+    LongFormQuestion(
+        id="q5_alzheimer_apoe",
+        question="Describe the role of APOE gene variants in Alzheimer's disease susceptibility. How does APOE4 differ from APOE2 and APOE3?",
+        question_type="comparison",
+        difficulty="hard",
+        reference_answer="APOE4 is the strongest genetic risk factor for late-onset Alzheimer's. It impairs amyloid-beta clearance, promotes tau pathology, and affects lipid metabolism. APOE2 is protective, APOE3 is neutral. APOE4 carriers have 3-15x increased risk.",
+        key_points=["APOE4 risk factor", "Amyloid-beta clearance", "Tau pathology", "APOE2 protective", "Lipid metabolism", "Risk stratification"],
+        required_entities=["APOE", "Alzheimer's disease", "amyloid", "dementia"]
+    ),
+    LongFormQuestion(
+        id="q6_cystic_fibrosis",
+        question="Explain the molecular basis of cystic fibrosis and how CFTR gene mutations lead to disease manifestations in different organs.",
+        question_type="explanation",
+        difficulty="medium",
+        reference_answer="CFTR encodes a chloride channel. Mutations (most common F508del) cause protein misfolding or dysfunction. This leads to thick mucus in lungs, pancreatic insufficiency, elevated sweat chloride, and male infertility.",
+        key_points=["CFTR chloride channel", "F508del mutation", "Protein misfolding", "Lung disease", "Pancreatic insufficiency", "Multi-organ effects"],
+        required_entities=["CFTR", "cystic fibrosis", "chloride channel", "lung disease"]
+    ),
+    LongFormQuestion(
+        id="q7_parkinsons_genetics",
+        question="What genetic factors contribute to Parkinson's disease? Compare the roles of SNCA, LRRK2, and PARK2 genes.",
+        question_type="comparison",
+        difficulty="hard",
+        reference_answer="SNCA encodes alpha-synuclein, mutations cause protein aggregation. LRRK2 is most common genetic cause, affects kinase activity. PARK2 (Parkin) causes early-onset PD through impaired mitophagy. All converge on dopaminergic neuron dysfunction.",
+        key_points=["SNCA alpha-synuclein", "LRRK2 mutations", "PARK2 early-onset", "Protein aggregation", "Mitophagy", "Dopamine neurons"],
+        required_entities=["Parkinson's disease", "SNCA", "LRRK2", "dopamine"]
+    ),
+    LongFormQuestion(
+        id="q8_rheumatoid_arthritis",
+        question="Describe the genetic and immunological basis of rheumatoid arthritis. How do HLA-DRB1 variants contribute to disease?",
+        question_type="explanation",
+        difficulty="medium",
+        reference_answer="RA is autoimmune disease attacking joints. HLA-DRB1 shared epitope increases risk 5-fold. Involves citrullinated protein antibodies, TNF-alpha, IL-6 inflammation, and synovial destruction.",
+        key_points=["HLA-DRB1 shared epitope", "Autoantibodies", "Citrullinated proteins", "TNF-alpha", "IL-6", "Joint destruction"],
+        required_entities=["rheumatoid arthritis", "HLA-DRB1", "autoimmune", "TNF"]
+    ),
+    LongFormQuestion(
+        id="q9_sickle_cell",
+        question="Explain the molecular mechanism of sickle cell disease. How does a single nucleotide change lead to the disease phenotype?",
+        question_type="explanation",
+        difficulty="medium",
+        reference_answer="Single nucleotide mutation in HBB gene (Glu6Val) causes hemoglobin S. Under low oxygen, HbS polymerizes causing RBC sickling. Leads to vaso-occlusion, hemolysis, organ damage. Heterozygotes have malaria protection.",
+        key_points=["HBB gene mutation", "Hemoglobin S", "RBC sickling", "Vaso-occlusion", "Hemolysis", "Malaria protection"],
+        required_entities=["sickle cell", "hemoglobin", "HBB", "anemia"]
+    ),
+    LongFormQuestion(
+        id="q10_schizophrenia",
+        question="What is known about the genetic architecture of schizophrenia? Discuss both common variants and rare mutations.",
+        question_type="synthesis",
+        difficulty="hard",
+        reference_answer="Schizophrenia is highly polygenic with hundreds of common variants of small effect. Key genes include DRD2, COMT, DISC1. Rare CNVs (22q11 deletion) confer high risk. Involves dopamine, glutamate systems, and synaptic function.",
+        key_points=["Polygenic architecture", "Common variants", "Rare CNVs", "DRD2 dopamine", "22q11 deletion", "Synaptic genes"],
+        required_entities=["schizophrenia", "DRD2", "COMT", "psychiatric"]
+    ),
+    LongFormQuestion(
+        id="q11_inflammatory_bowel",
+        question="Compare the genetic factors involved in Crohn's disease versus ulcerative colitis. What pathways are shared and what differs?",
+        question_type="comparison",
+        difficulty="hard",
+        reference_answer="Both involve NOD2, IL23R, ATG16L1. Crohn's has stronger NOD2 association and autophagy defects. UC more associated with HLA region. Shared: barrier dysfunction, microbiome dysbiosis. Different: Crohn's transmural, UC mucosal.",
+        key_points=["NOD2 Crohn's association", "IL23R shared", "Autophagy defects", "HLA in UC", "Microbiome", "Barrier dysfunction"],
+        required_entities=["Crohn's disease", "ulcerative colitis", "NOD2", "inflammatory bowel"]
+    ),
+    LongFormQuestion(
+        id="q12_hypertension",
+        question="Describe the genetic factors contributing to essential hypertension. How do genes like AGT, ACE, and ADD1 influence blood pressure?",
+        question_type="explanation",
+        difficulty="medium",
+        reference_answer="Essential hypertension is polygenic. AGT affects renin-angiotensin system. ACE I/D polymorphism influences enzyme levels. ADD1 affects sodium handling. GWAS identified 100+ loci affecting vascular tone, sodium balance, and cardiac output.",
+        key_points=["Polygenic trait", "Renin-angiotensin system", "AGT variants", "ACE polymorphism", "Sodium handling", "Multiple pathways"],
+        required_entities=["hypertension", "AGT", "ACE", "blood pressure"]
+    ),
+    LongFormQuestion(
+        id="q13_lupus",
+        question="Explain the genetic basis of systemic lupus erythematosus (SLE). What role do complement genes and interferon pathways play?",
+        question_type="explanation",
+        difficulty="hard",
+        reference_answer="SLE involves HLA class II, complement deficiencies (C1q, C4), and interferon pathway genes (IRF5, STAT4). Complement defects impair immune complex clearance. Type I interferon signature is hallmark. Affects multiple organs.",
+        key_points=["HLA class II", "Complement deficiency", "C1q C4 genes", "Interferon signature", "IRF5 STAT4", "Immune complex clearance"],
+        required_entities=["lupus", "SLE", "complement", "interferon", "autoimmune"]
+    ),
+    LongFormQuestion(
+        id="q14_hemophilia",
+        question="Compare hemophilia A and hemophilia B. What genes are involved and how do they affect the coagulation cascade?",
+        question_type="comparison",
+        difficulty="medium",
+        reference_answer="Hemophilia A: F8 gene mutations, Factor VIII deficiency, more common (80%). Hemophilia B: F9 gene mutations, Factor IX deficiency. Both X-linked recessive, affect intrinsic coagulation pathway, cause similar bleeding phenotype.",
+        key_points=["F8 gene hemophilia A", "F9 gene hemophilia B", "X-linked inheritance", "Coagulation cascade", "Factor VIII/IX", "Intrinsic pathway"],
+        required_entities=["hemophilia", "F8", "F9", "coagulation", "bleeding"]
+    ),
+    LongFormQuestion(
+        id="q15_asthma_genetics",
+        question="What genetic variants are associated with asthma susceptibility? How do they relate to immune function and airway biology?",
+        question_type="explanation",
+        difficulty="medium",
+        reference_answer="Asthma involves IL33, TSLP, IL4, IL13 (Th2 pathway), ORMDL3/GSDMB (17q21), and ADAM33 (airway remodeling). Genetic variants affect IgE levels, eosinophilia, bronchial hyperreactivity. Gene-environment interactions important.",
+        key_points=["Th2 pathway genes", "IL33 TSLP", "17q21 locus", "ADAM33 remodeling", "IgE regulation", "Gene-environment"],
+        required_entities=["asthma", "IL33", "IL4", "airway", "allergy"]
+    ),
+    LongFormQuestion(
+        id="q16_colorectal_cancer",
+        question="Describe the genetic pathways involved in colorectal cancer development. Compare sporadic cases with Lynch syndrome.",
+        question_type="comparison",
+        difficulty="hard",
+        reference_answer="Sporadic CRC follows adenoma-carcinoma sequence: APC→KRAS→TP53. Lynch syndrome: MLH1/MSH2 mismatch repair defects cause microsatellite instability. Lynch has earlier onset, right-sided tumors, better prognosis. Both involve Wnt pathway.",
+        key_points=["APC KRAS TP53 pathway", "Lynch syndrome MMR", "Microsatellite instability", "Adenoma-carcinoma sequence", "Wnt pathway", "Different prognosis"],
+        required_entities=["colorectal cancer", "APC", "Lynch syndrome", "MLH1"]
+    ),
+    LongFormQuestion(
+        id="q17_muscular_dystrophy",
+        question="Explain how mutations in the DMD gene cause Duchenne muscular dystrophy. What is the role of dystrophin in muscle function?",
+        question_type="explanation",
+        difficulty="medium",
+        reference_answer="DMD gene is largest human gene. Dystrophin links cytoskeleton to extracellular matrix in muscle. Mutations cause absent/truncated protein, membrane instability, calcium influx, muscle fiber necrosis, and progressive weakness.",
+        key_points=["DMD gene mutations", "Dystrophin function", "Membrane stability", "Cytoskeleton link", "Muscle degeneration", "X-linked inheritance"],
+        required_entities=["Duchenne", "dystrophin", "DMD", "muscle", "muscular dystrophy"]
+    ),
+    LongFormQuestion(
+        id="q18_thyroid_disease",
+        question="Compare the genetic factors in Graves' disease versus Hashimoto's thyroiditis. What immune mechanisms differ?",
+        question_type="comparison",
+        difficulty="hard",
+        reference_answer="Both involve HLA-DR3, CTLA4, PTPN22. Graves': TSH receptor antibodies cause hyperthyroidism. Hashimoto's: cytotoxic T cells destroy thyroid causing hypothyroidism. Different end phenotypes from shared genetic susceptibility.",
+        key_points=["HLA-DR3 shared", "CTLA4 association", "TSH receptor antibodies", "Cytotoxic T cells", "Hyper vs hypothyroid", "Autoimmune thyroid"],
+        required_entities=["Graves' disease", "Hashimoto's", "thyroid", "autoimmune", "HLA"]
+    ),
+    LongFormQuestion(
+        id="q19_epilepsy",
+        question="What genetic factors contribute to epilepsy? Discuss ion channel genes and their role in seizure disorders.",
+        question_type="explanation",
+        difficulty="medium",
+        reference_answer="Many epilepsies involve ion channel mutations (channelopathies). SCN1A (sodium), KCNQ2 (potassium), GABRA1 (GABA receptor) affect neuronal excitability. Can cause Dravet syndrome, benign familial seizures, or generalized epilepsy.",
+        key_points=["Ion channel mutations", "SCN1A sodium channel", "KCNQ2 potassium", "GABA receptors", "Neuronal excitability", "Dravet syndrome"],
+        required_entities=["epilepsy", "SCN1A", "ion channel", "seizure"]
+    ),
+    LongFormQuestion(
+        id="q20_obesity_genetics",
+        question="Describe the genetic architecture of obesity. How do genes like FTO, MC4R, and LEP contribute to body weight regulation?",
+        question_type="explanation",
+        difficulty="medium",
+        reference_answer="FTO is strongest common variant, affects satiety. MC4R mutations cause monogenic obesity via hypothalamic appetite regulation. LEP/LEPR defects cause severe early-onset obesity. Most obesity is polygenic with 100+ variants.",
+        key_points=["FTO common variant", "MC4R appetite regulation", "Leptin pathway", "Hypothalamic control", "Polygenic architecture", "Energy homeostasis"],
+        required_entities=["obesity", "FTO", "MC4R", "leptin", "body weight"]
     ),
 ]
 

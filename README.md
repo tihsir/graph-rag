@@ -2,13 +2,15 @@
 
 Long-form QA evaluation comparing three RAG approaches using LLM-as-a-Judge.
 
-## 🏆 Results Summary
+## 🏆 Results Summary (20 Questions)
 
 | Rank | System | Score |
 |------|--------|-------|
-| 🥇 | **SARG+ORAG** | **9.58/10** |
-| 🥈 | KG-RAG | 9.42/10 |
-| 🥉 | Vanilla RAG | 8.92/10 |
+| 🥇 | **SARG+ORAG** | **9.86/10** |
+| 🥈 | Vanilla RAG | 9.68/10 |
+| 🥉 | KG-RAG | 9.66/10 |
+
+*Evaluated on 20 diverse biomedical long-form questions*
 
 ## 🎯 Overview
 
@@ -154,33 +156,35 @@ graph-rag-eval/
 | Relevance | Addresses the question? | 25% |
 | Coherence | Well-organized? | 25% |
 
-## 📈 Detailed Results
+## 📈 Detailed Results (20 Questions)
 
-### Per-Question Scores
+### Score Summary by Question Type
 
-| Question | Vanilla | KG-RAG | SARG+ORAG |
-|----------|---------|--------|-----------|
-| Q1: HLA-B & Psoriasis | 9.8 | **10.0** | 9.5 |
-| Q2: Diabetes & NOD2 | 8.8 | 9.5 | **10.0** |
-| Q3: Multi-disease Compare | 8.2 | 8.8 | **9.2** |
-| **Average** | 8.92 | 9.42 | **9.58** |
+| Type | Questions | Avg Vanilla | Avg KG-RAG | Avg SARG+ORAG |
+|------|-----------|-------------|------------|---------------|
+| Explanation | 12 | 9.73 | 9.68 | 9.88 |
+| Comparison | 8 | 9.58 | 9.63 | 9.83 |
+| **Total** | **20** | **9.68** | **9.66** | **9.86** |
 
-### Triple Extraction Stats (Q3)
-
-```
-KG Triples:       69
-Semantic Triples: 83
-Duplicates Found: 7  (LLM-identified)
-Final Merged:     145
-```
-
-### Sample LLM Deduplication Reasoning
+### Triple Extraction Statistics (All 20 Questions)
 
 ```
-"KG-2 duplicates SEM-4 because both express association between 
-'Disease psoriasis' and 'Gene HLA-B'. ASSOCIATES_WITH is 
-implicitly bi-directional, so reversed order counts as duplicate."
+Total KG Triples:       1,339
+Total Semantic Triples: 1,264
+Total Duplicates Found: 57 (LLM-identified)
+Total Merged Triples:   2,546
 ```
+
+### Sample Questions & Scores
+
+| Question | Topic | Best System | Score |
+|----------|-------|-------------|-------|
+| q4_brca_cancer | BRCA & Cancer | All tied | 10.0 |
+| q5_alzheimer_apoe | APOE & Alzheimer's | All tied | 10.0 |
+| q13_lupus | SLE & Complement | SARG+ORAG | 10.0 |
+| q18_thyroid_disease | Graves' vs Hashimoto's | SARG+ORAG | 10.0 |
+
+See `data/my_results/evaluation_output.md` for complete results and triple outputs.
 
 ## 🔬 Adding New Questions
 
